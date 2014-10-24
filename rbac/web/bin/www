@@ -1,8 +1,0 @@
-#!/usr/bin/env node
-var app = require('../app');
-var server = app.server;
-
-server.start(function(){
-    console.log('Hapi server started @', server.info.uri);
-});
-

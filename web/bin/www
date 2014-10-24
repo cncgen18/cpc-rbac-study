@@ -1,0 +1,39 @@
+#!/usr/bin/env node
+var Hapi = require('hapi');
+var Good = require('good');
+
+var manifest = {
+    pack: {
+        cache: "catbox-memory"
+    },
+    servers: [
+        {
+            host: "localhost",
+            port: 8000,
+            options: {
+                cors: {
+                    credentials: true,
+                    origin: ['http://localhost:8001']
+                },
+                debug: { request: ["error"] }
+            }
+        }
+    ],
+    plugins: {
+        'lout': { },
+        'good': {
+            reporters: [
+                {
+                    reporter: Good.GoodConsole
+                }
+            ]
+        },
+        './../web': { }
+    }
+};
+
+Hapi.Pack.compose(manifest, function(err, pack){
+    pack.start(function(err){
+        console.log('Dev Pack Started!');
+    })
+});
