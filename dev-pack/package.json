@@ -1,0 +1,11 @@
+{
+    "name": "dev-pack",
+    "description": "Development Servers Pack",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+        "hapi": "*",
+        "good": "*",
+        "lout": "*"
+    }
+}

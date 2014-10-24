@@ -9,18 +9,13 @@ var manifest = {
     servers: [
         {
             host: "localhost",
-            port: 8000,
+            port: 5550,
             options: {
-                cors: {
-                    credentials: true,
-                    origin: ['http://localhost:8001']
-                },
                 debug: { request: ["error"] }
             }
         }
     ],
     plugins: {
-        'lout': { },
         'good': {
             reporters: [
                 {
@@ -28,12 +23,14 @@ var manifest = {
                 }
             ]
         },
-        './../../../../web': { }
+        './../../../../web': {}
     }
 };
 
 Hapi.Pack.compose(manifest, function(err, pack){
     pack.start(function(err){
-        console.log('Dev Pack Started!');
+        if(!err){
+            console.log('Dev Server Pack Started!');
+        }
     })
 });

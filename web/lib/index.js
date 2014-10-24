@@ -1,9 +1,9 @@
-var routes = require('./routes');
+var routes = require('./routes').routes;
 
 var businessOptions = {
     views: {
         engines: {
-            handlebars: require('handlebars')
+            html: require('handlebars')
         },
         basePath: __dirname,
         path: './public/templates',
