@@ -19,8 +19,9 @@
     "sqlite3": "^3.0.0"
   },
   "devDependencies": {
-    "lab": "3.2.*",
-    "mocha": "1.21.*",
-    "nimble": "*"
+    "lab": "^4.6.1",
+    "mocha": "*",
+    "nimble": "*",
+    "uuid": "^2.0.1"
   }
 }

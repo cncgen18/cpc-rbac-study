@@ -11,7 +11,7 @@ describe('Table Seed', function(){
                 { username: 'kyle', password: 'password', role:'admin', company: 'cpc' },
                 { username: 'ben', password: 'password', role:'admin', company: 'cpc' },
                 { username: 'noah', password: 'password', role:'admin', company: 'cpc' },
-                { username: 'micheal', password: 'password', role:'admin', company: 'cpc' }
+                { username: 'michael', password: 'password', role:'admin', company: 'cpc' }
             ]).success(function () {
                 done();
             }).error(function (error) {

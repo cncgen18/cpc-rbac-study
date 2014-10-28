@@ -2,11 +2,11 @@
 
 var fs        = require("fs");
 var path      = require("path");
-var allRoutes = [];
+var allHandlers = {};
 
-var parsedRoutes = function(routes){
-    for(var x = 0; x < routes.length; x++){
-        allRoutes.push(routes[x]);
+var parseHandlers = function(obj){
+    for(var property in obj){
+        allHandlers[property] = obj[property];
     }
 };
 
@@ -17,9 +17,8 @@ fs
     })
     .forEach(function(file) {
         var reqPath = './' + file.replace('.js', '');
-        var routes = require(reqPath);
-        parsedRoutes(routes);
+        var methods = require(reqPath);
+        parseHandlers(methods);
     });
 
-
-exports.routes = allRoutes;
+module.exports = allHandlers;
