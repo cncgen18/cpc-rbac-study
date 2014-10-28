@@ -9,9 +9,13 @@ exports.login = function(req, rep) {
         .findAll({
             where: payload
         })
-        .then(function(data){
-            rep(data);
-        })
+        .then(function (data) {
+                        if (req.auth !== undefined) {
+                            req.auth.session.set(credentials);
+                            req.session.set('accessControls', access); // This will be stored in yar cache plugin.
+                        }
+                        rep(data);
+                    })
         .catch(function(err){
             rep(err);
         });

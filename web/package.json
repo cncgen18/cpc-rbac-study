@@ -16,7 +16,8 @@
     "q": "*",
     "sequelize": "*",
     "sequelize-cli": "^0.3.3",
-    "sqlite3": "^3.0.0"
+    "sqlite3": "^3.0.0",
+    "hapi-auth-cookie": "*"
   },
   "devDependencies": {
     "lab": "^4.6.1",

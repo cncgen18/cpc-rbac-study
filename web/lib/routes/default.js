@@ -8,7 +8,8 @@ module.exports = [
                     path: __dirname + '../../../public'
                 }
             }
-        }
+        },
+        auth:false
     },
     { method: 'GET', path: '/', handler: { view: 'index.html' } }
 ];

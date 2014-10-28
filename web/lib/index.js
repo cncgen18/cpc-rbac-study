@@ -14,6 +14,16 @@ var businessOptions = {
 };
 
 exports.register = function (plugin, options, next) {
+    plugin.dependency('hapi-auth-cookie', function(plugin, next){
+        next();
+    });
+
+    plugin.auth.strategy('cookie-route', 'cookie', {
+        password: 'cpc-cookie-12345',
+        cookie: 'cpc-cookie-route',
+        redirectTo: false,
+        isSecure: false
+    });
     plugin.views(businessOptions.views);
     plugin.route(routes);
     next();
