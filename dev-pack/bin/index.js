@@ -8,7 +8,7 @@ var manifest = {
     },
     servers: [
         {
-            host: "localhost",
+            host: "0.0.0.0",
             port: 5550,
             options: {
                 debug: { request: ["error"] }

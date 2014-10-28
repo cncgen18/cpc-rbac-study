@@ -3,7 +3,7 @@ var flow = require('nimble');
 var Models = require('./../models');
 
 describe('Table Seed', function(){
-    it('should seed Station Types', function(done){
+    it('should seed users', function(done){
         Models
             .User
             .bulkCreate([
